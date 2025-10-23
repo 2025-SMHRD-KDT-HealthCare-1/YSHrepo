@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Menu = (props) => {
-    console.log(props)
+const Menu = ({temp, menu , sale}) => {
+  console.log(temp, menu, sale)
+    // console.log(props)
   return (
     <div>
-        <h1>{props.menu}</h1>
-        <p>{props.sale}</p>
+        {/* <h1>{props.temp} {props.menu}</h1>
+        <p>{props.sale}</p> */}
+        
         
         
     </div>
