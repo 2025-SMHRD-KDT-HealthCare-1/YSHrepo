@@ -15,6 +15,7 @@ const Ex02 = () => {
         // 클릭 했을 때 비어있는 하트라면 (조건문) 
         if(likeEmoji =="♡"){
             setLikeEmoji("♥")
+            // likeEmoji = 
             setLikeNum(+1)     
         }
         else{
