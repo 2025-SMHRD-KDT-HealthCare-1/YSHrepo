@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 // 정 안될때 사용하는 변수
-let comScore2 = 0;
-let userScore2 =0;
+// let comScore2 = 0;
+// let userScore2 =0;
 
 const ExDiceGame = () => {
   // 1. 버튼 클릭시 주사위 이미지 랜덤하게 변경(둘다)
@@ -37,13 +37,22 @@ const ExDiceGame = () => {
       userScore2 = userScore+1;
     }
 
+    useEffect(()=>{
+      if(userScore==10){
+      setResult('cum win')
+    }
+    else if(userScore==10){
+      setResult('user win')
+    }
+  },[comScore, userScore]);
+
     ///
-    if(comScore2==10){
+    /* if(userScore==10){
       setResult('cum win')
     }
     else if(userScore2==10){
       setResult('user win')
-    }
+    } */
   }
 
   const [userScore, setUserScore] = useState(0);
@@ -69,7 +78,8 @@ const ExDiceGame = () => {
         <h1>User Score : {userScore}</h1>
       </div>
 
-      <h1>결과 : {comScore>userScore? comScore==10? "com 승리":"" :false}</h1>
+      <h1>결과:{result}</h1>
+      {/* <h1>결과 : {comScore>userScore? comScore==10? "com 승리":"" :false}</h1> */}
     </div>
   )
 }
